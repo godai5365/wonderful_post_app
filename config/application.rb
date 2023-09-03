@@ -22,7 +22,7 @@ Bundler.require(*Rails.groups)
 module WonderfulPostApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.1
+    config.load_defaults 6.0
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -42,5 +42,10 @@ module WonderfulPostApp
       g.helper false
       g.test_framework false
     end
+
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
+    config.i18n.default_locale = :ja
+
   end
 end

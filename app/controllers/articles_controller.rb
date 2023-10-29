@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  # skip_before_action :authenticate_user!, only: %i[ index show ]
   before_action :set_article, only: %i[ show edit update destroy ]
 
   # GET /sample_articles or /sample_articles.json
@@ -8,6 +9,7 @@ class ArticlesController < ApplicationController
 
   # GET /sample_articles/1 or /sample_articles/1.json
   def show
+    # @articles = Article.find(params[:id])
   end
 
   # GET /sample_articles/new
@@ -22,6 +24,7 @@ class ArticlesController < ApplicationController
   # POST /sample_articles or /sample_articles.json
   def create
     @article = Article.new(article_params)
+    # @article = current_user.articles.new(article_params)
       if @article.save
         redirect_to article_url(@article), notice: "#{t('activerecord.models.article')}を作成しました。"
       else
@@ -47,6 +50,7 @@ class ArticlesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
+      # @article = current_user.articles.find(params[:id])
       @article = Article.find(params[:id])
     end
 

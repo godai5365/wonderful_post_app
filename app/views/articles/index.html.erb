@@ -2,8 +2,10 @@
 
 <h1>記事</h1>
 
+<!-- <%= link_to '記事作成', new_article_path, class: "btn btn-info" %>-->
 <%= link_to '記事作成', new_article_path, class: "btn btn-info" %>
 
+<!--<table class="table">-->
 <table class="table">
   <thead>
     <tr>
@@ -18,10 +20,13 @@
         <td><%= article.content %></td>
         <td class="hstack gap-3">
           <%= link_to '詳細', article, class: "btn btn-success mr-1" %>
+          <!--<%= link_to '編集', edit_article_path(article), class: "btn btn-warning" %>-->
           <%= link_to '編集', edit_article_path(article), class: "btn btn-warning" %>
+          <!--<%= button_to '削除', article, class: "btn btn-danger", method: :delete %>-->
           <%= button_to '削除', article, class: "btn btn-danger", method: :delete %>
         </td>
       </tr>
     <% end %>
   </tbody>
+<!--</table>-->
 </table>

@@ -1,10 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>記事</h1>
-<%= render partial: "search" %>
+<h1>マイページ</h1>
 <%= paginate @articles %>
-<!-- <%= link_to '記事作成', new_article_path, class: "btn btn-info" %>-->
-
+<%= render partial: "search" %>
+<%= link_to '記事作成', new_article_path, class: "btn btn-info" %>
 <table class="table">
   <thead>
     <tr>
@@ -22,10 +21,10 @@
           <% end %>
         </td>
         <td><%= article.content %></td>
-        <td class="hstack gap-3">
-          <%= link_to '詳細', article, class: "btn btn-success mr-1" %>
-          <!--<%= link_to '編集', edit_article_path(article), class: "btn btn-warning" %>-->
-          <!--<%= button_to '削除', article, class: "btn btn-danger", method: :delete %>-->
+        <td>
+          <%= link_to '詳細', article, class: "btn btn-success" %>
+          <%= link_to '編集', edit_article_path(article), class: "btn btn-warning" %>
+          <%= link_to '削除', article, class: "btn btn-danger", method: :delete, data: { confirm: '本当に削除しますか?' } %>
         </td>
       </tr>
     <% end %>

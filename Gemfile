@@ -47,6 +47,9 @@ group :development, :test do
   gem 'pry-byebug' # 追加
   gem 'pry-doc' # 追加
   gem 'pry-rails' # 追加
+  gem 'rspec-rails', '~> 6.1.0' # 追加
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do
